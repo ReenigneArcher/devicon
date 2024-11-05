@@ -4,7 +4,7 @@ from build_assets.PathResolverAction import PathResolverAction
 
 def get_selenium_runner_args(has_token=True, peek_mode=False):
     """
-    Get the commandline arguments for the icomoon_peek.py and 
+    Get the commandline arguments for the icomoon_peek.py and
     icomoon_build.py.
     """
     parser = ArgumentParser(description="Upload svgs to Icomoon to create icon files.")
@@ -49,9 +49,6 @@ def get_check_icon_pr_args():
     """
     parser = ArgumentParser(description="Check the SVGs to ensure their attributes are correct. Run whenever a PR is opened")
 
-    parser.add_argument("pr_title",
-                        help="The title of the PR that we are peeking at")
-
     parser.add_argument("icons_folder_path",
                         help="The path to the icons folder",
                         action=PathResolverAction)
@@ -59,6 +56,10 @@ def get_check_icon_pr_args():
     parser.add_argument("devicon_json_path",
                         help="The path to the devicon.json",
                         action=PathResolverAction)
+
+    parser.add_argument("changed_files",
+                        help="List of SVG files changed in the PR",
+                        nargs="+")
 
     return parser.parse_args()
 
