@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-        with: 
+        with:
           python-version: '3.10'
 
       - name: Install dependencies (python, pip, npm)
@@ -20,10 +20,18 @@ jobs:
         shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: >
-          python ./.github/scripts/icomoon_build.py 
-          ./.github/scripts/build_assets/geckodriver-v0.32.2-linux64/geckodriver ./icomoon.json 
-          ./devicon.json ./icons ./ $GITHUB_TOKEN --headless
+        run: |
+          git fetch --tags
+          CHANGED_ICONS=$(git diff --name-only $(git describe --tags --abbrev=0)..HEAD | grep -E 'icons/.*\.svg')
+          python ./.github/scripts/icomoon_build.py \ 
+            ./.github/scripts/build_assets/geckodriver-v0.32.2-linux64/geckodriver
+            ./icomoon.json \
+            ./devicon.json \
+            ./icons \
+            ./ \
+            $GITHUB_TOKEN \
+            ${CHANGED_ICONS} \
+            --headless
 
       - name: Upload geckodriver.log for debugging purposes
         uses: actions/upload-artifact@v2
@@ -40,7 +48,7 @@ jobs:
           path: ./log.txt
 
       - name: Build devicon.min.css
-        if: success() 
+        if: success()
         run: npm run build-css
 
       # - name: Upload screenshot of the newly made icons
@@ -58,10 +66,10 @@ jobs:
         uses: juliangruber/read-file-action@v1.0.0
         with:
           # taken from icomoon_build.py's get_release_message()
-          path: ./release_message.txt  
+          path: ./release_message.txt
 
       - name: Create Pull Request
-        if: success() 
+        if: success()
         uses: peter-evans/create-pull-request@v3
         env:
           MESSAGE: |
