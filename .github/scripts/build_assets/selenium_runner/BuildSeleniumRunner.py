@@ -14,7 +14,7 @@ class BuildSeleniumRunner(SeleniumRunner):
     def build_icons(self, icomoon_json_path: str,
         zip_path: Path, svgs: List[str], screenshot_folder: str):
         self.upload_icomoon(icomoon_json_path)
-        # necessary so we can take screenshot of only the 
+        # necessary so we can take screenshot of only the
         # recently uploaded icons later
         self.deselect_all_icons_in_top_set()
         self.upload_svgs(svgs, screenshot_folder)
@@ -28,7 +28,7 @@ class BuildSeleniumRunner(SeleniumRunner):
         :raises TimeoutException: happens when elements are not found.
         """
         print("Uploading icomoon.json file...", file=self.log_output)
-        
+
         # find the file input and enter the file path
         import_btn = self.driver.find_element_by_css_selector(
             SeleniumRunner.GENERAL_IMPORT_BUTTON_CSS
@@ -48,9 +48,9 @@ class BuildSeleniumRunner(SeleniumRunner):
 
     def upload_svgs(self, svgs: List[str], screenshot_folder: str):
         """
-        Upload the SVGs provided in svgs. This will upload the 
+        Upload the SVGs provided in svgs. This will upload the
         :param svgs: a list of svg Paths that we'll upload to icomoon.
-        :param screenshot_folder: the name of the screenshot_folder. 
+        :param screenshot_folder: the name of the screenshot_folder.
         """
         print("Uploading SVGs...", file=self.log_output)
 
@@ -103,7 +103,7 @@ class BuildSeleniumRunner(SeleniumRunner):
         """
         Take the overview icon screenshot of the uploaded icons.
         :param svgs: a list of svg Paths that we'll upload to icomoon.
-        :param screenshot_folder: the name of the screenshot_folder. 
+        :param screenshot_folder: the name of the screenshot_folder.
         """
         # take pictures
         print("Taking screenshot of the new icons...", file=self.log_output)
@@ -122,7 +122,7 @@ class BuildSeleniumRunner(SeleniumRunner):
 
     def go_to_generate_font_page(self):
         """
-        Go to the generate font page. Also handles the "Deselect Icons 
+        Go to the generate font page. Also handles the "Deselect Icons
         with Strokes" alert.
         """
         self.go_to_page(IcomoonPage.GENERATE_FONT)
@@ -137,7 +137,7 @@ class BuildSeleniumRunner(SeleniumRunner):
 
     def download_icomoon_fonts(self, zip_path: Path):
         """
-        Download the icomoon.zip from icomoon.io. Also take a picture of 
+        Download the icomoon.zip from icomoon.io. Also take a picture of
         what the icons look like.
         :param zip_path: the path to the zip file after it's downloaded.
         """
@@ -167,7 +167,7 @@ class BuildSeleniumRunner(SeleniumRunner):
         :return: True if the file is found within the allotted time, else
         False.
         """
-        end_time = time.time() + self.LONG_WAIT_IN_SEC
+        end_time = time.time() + self.LONG_WAIT_IN_SEC * 2
         while time.time() <= end_time:
             if zip_path.exists():
                 return True

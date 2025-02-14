@@ -61,6 +61,13 @@ jobs:
           name: logfile
           path: ./log.txt
 
+      - name: Upload icomoon zip for debugging purposes
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: icomoon.zip
+          path: devicon-v1.0.zip
+
       - name: Build devicon.min.css
         if: success()
         run: npm run build-css

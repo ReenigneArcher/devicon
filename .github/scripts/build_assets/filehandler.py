@@ -1,7 +1,7 @@
 import json
 from zipfile import ZipFile, is_zipfile
 from pathlib import Path
-from typing import List, Union
+from typing import List, TextIO, Union
 import os
 import re
 from io import FileIO
@@ -52,15 +52,15 @@ def is_not_in_icomoon_json(icon, icomoon_json):
     return True
 
 
-def get_svgs_paths(new_icons: List[dict], icons_folder_path: str, 
+def get_svgs_paths(new_icons: List[dict], icons_folder_path: str,
     icon_versions_only: bool=False, as_str: bool=True):
     """
     Get all the suitable svgs file path listed in the devicon.json.
     :param new_icons, a list containing the info on the new icons.
     :param icons_folder_path, the path where the function can find the
     listed folders.
-    :param icon_versions_only, whether to only get the svgs that can be 
-    made into an icon. 
+    :param icon_versions_only, whether to only get the svgs that can be
+    made into an icon.
     :param: as_str, whether to add the path as a string or as a Path.
     :return: a list of svg file paths that can be uploaded to Icomoon.
     """
@@ -134,7 +134,7 @@ def is_alias(font_version: str, aliases: List[dict]):
     return False
 
 
-def extract_files(zip_path: str, extract_path: str, logfile: FileIO, delete=True):
+def extract_files(zip_path: str, extract_path: str, logfile: Union[FileIO, TextIO], delete=True):
     """
     Extract the style.css and font files from the devicon.zip
     folder. Must call the gulp task "get-icomoon-files"
@@ -151,13 +151,17 @@ def extract_files(zip_path: str, extract_path: str, logfile: FileIO, delete=True
     fixBadZipfile(zip_path, logfile)
     print(f"it's zipped {is_zipfile(zip_path)}", file=logfile)
     icomoon_zip = ZipFile(zip_path)
-    target_files = ('selection.json', 'fonts/', 'fonts/devicon.ttf',
-                    'fonts/devicon.woff', 'fonts/devicon.eot',
-                    'fonts/devicon.svg', "style.css")
+
+    # debug print contents of the zip file
+    print("Contents of the zip file:", icomoon_zip.namelist(), file=logfile)
+
+    target_files = (
+        'selection.json',
+        'fonts/',
+        'style.css',
+    )
     for file in target_files:
         icomoon_zip.extract(file, extract_path)
-
-    print("Files extracted", file=logfile)
 
     if delete:
         print("Deleting devicon zip file...", file=logfile)
@@ -165,22 +169,22 @@ def extract_files(zip_path: str, extract_path: str, logfile: FileIO, delete=True
         os.remove(zip_path)
 
 
-def fixBadZipfile(zippath: str, logfile: FileIO):  
+def fixBadZipfile(zippath: str, logfile: FileIO):
     """
     Fix a bad zipfile (one that causes zipfile.ZipFile to throw a BadZipfile Error).
     Taken from https://stackoverflow.com/a/11385480/11683637.
     """
-    f = open(zippath, 'r+b')  
-    data = f.read()  
-    pos = data.find(b'\x50\x4b\x05\x06') # End of central directory signature  
-    if (pos > 0):  
-        # self._log("Trancating file at location " + str(pos + 22)+ ".")  
-        f.seek(pos + 22)   # size of 'ZIP end of central directory record' 
-        f.truncate()  
+    f = open(zippath, 'r+b')
+    data = f.read()
+    pos = data.find(b'\x50\x4b\x05\x06') # End of central directory signature
+    if (pos > 0):
+        # self._log("Truncating file at location " + str(pos + 22)+ ".")
+        f.seek(pos + 22)  # size of 'ZIP end of central directory record'
+        f.truncate()
     else:
-        print("Zipfile don't need to be fixed", file=logfile)
+        print("Zipfile doesn't need to be fixed", file=logfile)
 
-    f.close() 
+    f.close()
 
 
 def rename_extracted_files(extract_path: str, logfile: FileIO):
@@ -235,7 +239,7 @@ def write_to_file(path: str, value):
     with open(path, "w") as file:
         file.write(value)
 
-# --- NOT USED CURRENTLY --- 
+# --- NOT USED CURRENTLY ---
 def get_added_modified_svgs(files_added_json_path: str,
     files_modified_json_path: str):
     """
@@ -257,5 +261,5 @@ def get_added_modified_svgs(files_added_json_path: str,
         path = Path(file)
         if path.suffix.lower() == ".svg" and path.as_posix().lower().startswith('icons/'):
             svgs.append(path)
-    
+
     return svgs

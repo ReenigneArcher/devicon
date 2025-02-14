@@ -46,7 +46,12 @@ def main():
         runner.build_icons(args.icomoon_json_path, zip_path,
             icon_svgs, screenshot_folder)
 
-        filehandler.extract_files(str(zip_path), args.download_path, logfile)
+        filehandler.extract_files(
+            zip_path=str(zip_path),
+            extract_path=args.download_path,
+            logfile=logfile,
+            delete=False,
+        )
         filehandler.rename_extracted_files(args.download_path, logfile)
 
         print("Creating the release message by querying the GitHub API...", file=logfile)
