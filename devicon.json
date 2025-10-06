@@ -5212,6 +5212,26 @@
         ]
     },
     {
+        "name": "haproxy",
+        "altnames": [],
+        "tags": [
+            "proxy",
+            "loadbalancer"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark"
+            ],
+            "font": [
+                "plain",
+                "plain-wordmark"
+            ]
+        },
+        "color": "#006da7",
+        "aliases": []
+    },
+    {
         "name": "handlebars",
         "altnames": [
             "handlebarsjs"
