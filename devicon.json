@@ -6321,6 +6321,27 @@
         "aliases": []
     },
     {
+        "name": "jwt",
+        "altnames": [
+            "jwt.io"
+        ],
+        "tags": [
+            "security",
+            "authentication",
+            "token"
+        ],
+        "versions": {
+            "svg": [
+                "original"
+            ],
+            "font": [
+                "original"
+            ]
+        },
+        "color": "#546e7a",
+        "aliases": []
+    },
+    {
         "name": "k3os",
         "altnames": [],
         "tags": [
