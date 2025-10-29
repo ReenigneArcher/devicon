@@ -4183,10 +4183,11 @@
         ],
         "versions": {
             "svg": [
+                "original",
                 "original-wordmark"
             ],
             "font": [
-                "original-wordmark"
+                "original"
             ]
         },
         "color": "#cc0000",
