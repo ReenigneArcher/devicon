@@ -6332,13 +6332,14 @@
         ],
         "versions": {
             "svg": [
-                "original"
+                "original",
+                "original-wordmark"
             ],
             "font": [
                 "original"
             ]
         },
-        "color": "#546e7a",
+        "color": "#ffffff",
         "aliases": []
     },
     {
