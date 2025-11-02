@@ -4614,6 +4614,32 @@
         ]
     },
     {
+        "name": "gitea",
+        "altnames": [],
+        "tags": [
+            "version-control",
+            "git"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain-wordmark"
+            ],
+            "font": [
+                "original",
+                "plain-wordmark"
+            ]
+        },
+        "color": "#73a952",
+        "aliases": [
+            {
+                "base": "original",
+                "alias": "plain"
+            }
+        ]
+    },
+    {
         "name": "github",
         "altnames": [],
         "tags": [
@@ -4817,6 +4843,35 @@
         },
         "color": "#000000",
         "aliases": []
+    },
+    {
+        "name": "gnuradio",
+        "altnames": [
+            "gnu radio"
+        ],
+        "tags": [
+            "open-source",
+            "software-radio",
+            "signal-processing"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain-wordmark"
+            ],
+            "font": [
+                "original",
+                "plain-wordmark"
+            ]
+        },
+        "color": "#ff6905",
+        "aliases": [
+            {
+                "base": "original",
+                "alias": "plain"
+            }
+        ]
     },
     {
         "name": "go",
@@ -5609,6 +5664,29 @@
         ]
     },
     {
+        "name": "hyprland",
+        "altnames": [],
+        "tags": [
+            "tiling",
+            "window manager",
+            "wayland"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain",
+                "plain-wordmark"
+            ],
+            "font": [
+                "plain-wordmark",
+                "plain"
+            ]
+        },
+        "color": "#00c6e2",
+        "aliases": []
+    },
+    {
         "name": "ie10",
         "altnames": [
             "internetexplorer10"
@@ -6268,6 +6346,32 @@
         },
         "color": "#28a745",
         "aliases": []
+    },
+    {
+        "name": "junie",
+        "altnames": [],
+        "tags": [
+            "ai",
+            "coding",
+            "agent"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark"
+            ],
+            "font": [
+                "plain",
+                "plain-wordmark"
+            ]
+        },
+        "color": "#47e054",
+        "aliases": [
+            {
+                "base": "original",
+                "alias": "plain"
+            }
+        ]
     },
     {
         "name": "junit",
@@ -9221,6 +9325,34 @@
         },
         "color": "#f7192d",
         "aliases": []
+    },
+    {
+        "name": "opnsense",
+        "altnames": [],
+        "tags": [
+            "FreeBSD",
+            "firewall"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain-wordmark",
+                "line"
+            ],
+            "font": [
+                "original",
+                "plain-wordmark",
+                "line"
+            ]
+        },
+        "color": "#de3c06",
+        "aliases": [
+            {
+                "base": "original",
+                "alias": "plain"
+            }
+        ]
     },
     {
         "name": "oracle",
