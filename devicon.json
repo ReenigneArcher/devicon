@@ -5609,6 +5609,29 @@
         ]
     },
     {
+        "name": "hyprland",
+        "altnames": [],
+        "tags": [
+            "tiling",
+            "window manager",
+            "wayland"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain",
+                "plain-wordmark"
+            ],
+            "font": [
+                "plain-wordmark",
+                "plain"
+            ]
+        },
+        "color": "#00c6e2",
+        "aliases": []
+    },
+    {
         "name": "ie10",
         "altnames": [
             "internetexplorer10"
