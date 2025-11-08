@@ -630,6 +630,29 @@
         ]
     },
     {
+        "name": "apify",
+        "altnames": [],
+        "tags": [
+            "web",
+            "scraping",
+            "platform"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain",
+                "plain-wordmark"
+            ],
+            "font": [
+                "plain",
+                "plain-wordmark"
+            ]
+        },
+        "color": "#246dff",
+        "aliases": []
+    },
+    {
         "name": "apl",
         "altnames": [
             "A Programming Language"
