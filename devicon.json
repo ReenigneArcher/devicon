@@ -1834,6 +1834,33 @@
         "aliases": []
     },
     {
+        "name": "ceph",
+        "altnames": [],
+        "tags": [
+            "distributed",
+            "storage",
+            "resilience"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain-wordmark"
+            ],
+            "font": [
+                "original",
+                "plain-wordmark"
+            ]
+        },
+        "color": "#f0424d",
+        "aliases": [
+            {
+                "base": "original",
+                "alias": "plain"
+            }
+        ]
+    },
+    {
         "name": "ceylon",
         "altnames": [
             "eclipseceylon",
