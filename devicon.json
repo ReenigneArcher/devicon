@@ -5580,6 +5580,30 @@
         "aliases": []
     },
     {
+        "name": "helix",
+        "altnames": [],
+        "tags": [
+            "text editor",
+            "editor",
+            "ide",
+            "IDE",
+            "open-source"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "plain",
+				"line"
+            ],
+            "font": [
+                "plain",
+				"line"
+            ]
+        },
+        "color": "#997ff8",
+        "aliases": []
+    },
+    {
         "name": "helm",
         "altnames": [],
         "tags": [
