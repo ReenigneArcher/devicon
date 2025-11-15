@@ -10147,6 +10147,29 @@
         ]
     },
     {
+        "name": "positron",
+        "altnames": [],
+        "tags": [
+            "ide",
+            "data science",
+            "python",
+            "r"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "plain",
+                "line"
+            ],
+            "font": [
+                "plain",
+                "line"
+            ]
+        },
+        "color": "#3a78b1",
+        "aliases": []
+    },
+    {
         "name": "postcss",
         "altnames": [],
         "tags": [
