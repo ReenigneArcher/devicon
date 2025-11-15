@@ -6087,6 +6087,27 @@
         "aliases": []
     },
     {
+        "name": "istio",
+        "altnames": [],
+        "tags": [
+            "service-mesh",
+            "cloud-native",
+            "kubernetes"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark"
+            ],
+            "font": [
+                "original",
+                "original-wordmark"
+            ]
+        },
+        "color": "#516baa",
+        "aliases": []
+    },
+    {
         "name": "jaegertracing",
         "altnames": [
             "jaeger"
