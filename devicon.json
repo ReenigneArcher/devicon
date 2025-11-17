@@ -12182,6 +12182,30 @@
         "aliases": []
     },
     {
+        "name": "sfml",
+        "altnames": [
+            "Simple and Fast Multimedia",
+            "Simple and Fast Multimedia Library"
+        ],
+        "tags": [
+            "graphics",
+            "game",
+            "development",
+            "c++"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "plain"
+            ],
+            "font": [
+                "plain"
+            ]
+        },
+        "color": "#8cc445",
+        "aliases": []
+    },
+    {
         "name": "shopware",
         "altnames": [],
         "tags": [
