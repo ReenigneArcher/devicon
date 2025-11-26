@@ -4235,6 +4235,27 @@
         "aliases": []
     },
     {
+        "name": "fish",
+        "altnames": [],
+        "tags": [
+            "shell",
+            "programming",
+            "language",
+            "unix"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "plain"
+            ],
+            "font": [
+                "plain"
+            ]
+        },
+        "color": "#4CA9F9",
+        "aliases": []
+    },
+    {
         "name": "flask",
         "altnames": [],
         "tags": [
