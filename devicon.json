@@ -11981,6 +11981,28 @@
         "aliases": []
     },
     {
+        "name": "scaleway",
+        "altnames": [
+            "scw"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark"
+            ],
+            "font": [
+                "plain",
+                "plain-wordmark"
+            ]
+        },
+        "tags": [
+            "cloud",
+            "hosting",
+            "server"
+        ],
+        "color": "#792dd4"
+    },
+    {
         "name": "scalingo",
         "altnames": [],
         "tags": [
