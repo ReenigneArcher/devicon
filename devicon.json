@@ -8355,6 +8355,24 @@
         ]
     },
     {
+        "name": "n8n",
+        "altnames": [],
+        "tags": [
+            "ai"
+        ],
+        "versions": {
+            "svg": [
+                "original-wordmark",
+                "plain-wordmark"
+            ],
+            "font": [
+                "plain-wordmark"
+            ]
+        },
+        "color": "#EA4B71",
+        "aliases": []
+    },
+    {
         "name": "nano",
         "altnames": [
             "gnu-nano",
