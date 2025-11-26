@@ -11992,7 +11992,8 @@
             ],
             "font": [
                 "plain",
-                "plain-wordmark"
+                "plain-wordmark",
+                "line"
             ]
         },
         "tags": [
@@ -12000,7 +12001,13 @@
             "hosting",
             "server"
         ],
-        "color": "#792dd4"
+        "color": "#792dd4",
+        "aliases": [
+            {
+                "base": "original",
+                "alias": "plain"
+            }
+        ]
     },
     {
         "name": "scalingo",
