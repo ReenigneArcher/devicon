@@ -2765,6 +2765,27 @@
         ]
     },
     {
+        "name": "css",
+        "altnames": [
+            "cascadingstylesheets"
+        ],
+        "tags": [
+            "language",
+            "programming"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "plain"
+            ],
+            "font": [
+                "plain"
+            ]
+        },
+        "color": "#663399",
+        "aliases": []
+    },
+    {
         "name": "css3",
         "altnames": [
             "cascadingstylesheets3"
