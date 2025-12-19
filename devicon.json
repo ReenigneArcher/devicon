@@ -9096,6 +9096,25 @@
         "aliases": []
     },
     {
+        "name": "novelwriter",
+        "altnames": [],
+        "tags": [
+            "editor",
+            "text editor"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "plain"
+            ],
+            "font": [
+                "plain"
+            ]
+        },
+        "color": "#346598",
+        "aliases": []
+    },
+    {
         "name": "npm",
         "altnames": [
             "npmjs",
