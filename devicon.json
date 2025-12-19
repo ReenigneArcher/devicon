@@ -2831,6 +2831,36 @@
         "aliases": []
     },
     {
+        "name": "cursor",
+        "altnames": [
+            "cursorai"
+        ],
+        "tags": [
+            "ide",
+            "ai",
+            "code",
+            "editor"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark",
+                "plain"
+            ],
+            "font": [
+                "plain",
+                "original-wordmark"
+            ]
+        },
+        "color": "#0f111a",
+        "aliases": [
+            {
+                "base": "original-wordmark",
+                "alias": "plain-wordmark"
+            }
+        ]
+    },
+    {
         "name": "cypressio",
         "altnames": [
             "cypress"
