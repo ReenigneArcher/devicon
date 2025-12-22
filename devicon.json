@@ -12531,12 +12531,17 @@
                 "plain-wordmark"
             ],
             "font": [
-                "plain",
+                "original",
                 "plain-wordmark"
             ]
         },
         "color": "#50d18d",
-        "aliases":[]
+        "aliases":[
+            {
+                "base": "original",
+                "alias": "plain"
+            }
+        ]
     },
     {
         "name": "tex",
