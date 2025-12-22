@@ -12517,23 +12517,26 @@
         ]
     },
     {
-        "name": "testrail", 
-        "altnames": [], 
+        "name": "testrail",
+        "altnames": [],
         "tags": [
             "testing",
             "tool"
-        ], 
+        ],
         "versions": {
             "svg": [
+                "original",
+                "original-wordmark",
                 "plain",
                 "plain-wordmark"
-            ], 
+            ],
             "font": [
-                "plain"
+                "plain",
+                "plain-wordmark"
             ]
         },
-        "color": "#50d18d", 
-        "aliases":[] 
+        "color": "#50d18d",
+        "aliases":[]
     },
     {
         "name": "tex",
