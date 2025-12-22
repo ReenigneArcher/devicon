@@ -4355,6 +4355,36 @@
         "aliases": []
     },
     {
+        "name": "flyway",
+        "altnames": [],
+        "tags": [
+            "java",
+            "migration",
+            "database"
+        ],
+        "versions": {
+            "svg": [
+                "original",
+                "original-wordmark"
+            ],
+            "font": [
+                "original",
+                "original-wordmark"
+            ]
+        },
+        "color": "#c00",
+        "aliases": [
+            {
+                "base": "original",
+                "alias": "plain"
+            },
+            {
+                "base": "original-wordmark",
+                "alias": "plain-wordmark"
+            }
+        ]
+    },
+    {
         "name": "forgejo",
         "altnames": [],
         "tags": [
