@@ -12519,6 +12519,26 @@
         },
         "color": "#8cc445",
         "aliases": []
+    },  
+    {
+        "name": "shadcn",
+        "altnames": [],
+        "color":"#000000",
+        "tags": [
+            "ui",
+            "components",
+            "reactjs",
+            "library"
+        ],
+        "versions": {
+            "svg": [
+                "original"
+            ],
+            "font": [
+                "original"
+            ]
+        },
+        "aliases": []
     },
     {
         "name": "shopware",
