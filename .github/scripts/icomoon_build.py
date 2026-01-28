@@ -39,7 +39,7 @@ def main():
             new_icons, args.icons_folder_path, icon_versions_only=True)
         zip_name = "devicon-v1.0.zip"
         zip_path = Path(args.download_path, zip_name)
-        screenshot_folder = filehandler.create_screenshot_folder("./") 
+        screenshot_folder = filehandler.create_screenshot_folder("./")
 
         runner = BuildSeleniumRunner(args.download_path,
             args.geckodriver_path, args.headless, log_output=logfile)
@@ -52,11 +52,6 @@ def main():
         print("Creating the release message by querying the GitHub API...", file=logfile)
         get_release_message(args.token, logfile)
 
-        print("Closing issues with the `in-develop` label.", file=logfile)
-        issues = api_handler.get_issues_by_labels(args.token, ["in-develop"])
-        issue_nums = [issue_num["number"] for issue_num in issues]
-        api_handler.close_issues(args.token, issue_nums)
-
         print("Task completed.", file=logfile)
     except TimeoutException as e:
         util.exit_with_err(Exception("Selenium Time Out Error: \n" + str(e)), logfile)
@@ -65,7 +60,7 @@ def main():
     finally:
         print("Exiting", file=logfile)
         if runner is not None:
-            runner.close() 
+            runner.close()
         logfile.close()
 
 
@@ -76,7 +71,7 @@ def get_icons_for_building(icomoon_json_path: str, devicon_json_path: str, token
     :param devicon_json_path - the path to the `devicon.json`.
     :param token - the token to access the GitHub API.
     :param logfile.
-    :return a list of dict containing info on the icons. These are 
+    :return a list of dict containing info on the icons. These are
     from the `devicon.json`.
     """
     devicon_json = filehandler.get_json_file_content(devicon_json_path)
@@ -137,7 +132,7 @@ def update_icomoon_json(new_icons: List[str], icomoon_json_path: str, logfile: F
     new_len = len(icomoon_json["icons"])
     print(f"Update completed. Removed {cur_len - new_len} icons:", *messages, sep='\n', file=logfile)
     filehandler.write_to_file(icomoon_json_path, json.dumps(icomoon_json))
-  
+
 
 def find_icomoon_icon_not_in_new_icons(icomoon_icon: Dict, new_icons: List, messages: List):
     """
@@ -145,7 +140,7 @@ def find_icomoon_icon_not_in_new_icons(icomoon_icon: Dict, new_icons: List, mess
     This also add logging for which icons were removed.
     :param icomoon_icon - a dict object from the icomoon.json's `icons` attribute.
     :param new_icons - a list of new icons. Each element is an object from the `devicon.json`.
-    :param messages - an empty list where the function can attach logging on which 
+    :param messages - an empty list where the function can attach logging on which
     icon were removed.
     """
     for new_icon in new_icons:
@@ -182,7 +177,7 @@ def get_release_message(token, logfile: FileIO):
     thankYou = "A huge thanks to all our maintainers and contributors for making this release possible!"
     iconTitle = f"**{len(newIcons)} New Icons**"
     featureTitle = f"**{len(features)} New Features**"
-    finalString = "{0}\n\n {1}\n{2}\n\n {3}\n{4}".format(thankYou, 
+    finalString = "{0}\n\n {1}\n{2}\n\n {3}\n{4}".format(thankYou,
         iconTitle, "\n".join(newIcons),
         featureTitle, "\n".join(features))
 
